@@ -1,0 +1,27 @@
+server:
+  port: 8080
+spring:
+  application:
+    # 应用的名字
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/spring_boot?characterEncoding=utf-8&useUnicode=true&useSSL=false
+    username: root
+    password: root
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+# mybatis-plus 自定义配置
+mybatis-plus:
+  global-config:
+    db-config:
+      # 数据库ID自增
+      id-type: auto
+      # 表名前缀
+      table-prefix: t_
+  configuration:
+    # 打印sql
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    # 开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射
+    map-underscore-to-camel-case: true
